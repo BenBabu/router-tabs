@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import {RouterTabsModule} from '../../dist/router-tabs';
+import { AppRoutingModule } from './app.router';
+
+import { RouterTabsModule } from '../../dist/router-tabs';
 
 @NgModule({
   declarations: [
@@ -10,9 +11,11 @@ import {RouterTabsModule} from '../../dist/router-tabs';
   ],
   imports: [
     BrowserModule,
-    RouterTabsModule
+    RouterTabsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
