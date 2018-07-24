@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "router-tabs": {
+      "root": "projects/router-tabs",
+      "sourceRoot": "projects/router-tabs/src",
+      "projectType": "library",
+      "prefix": "exp",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/router-tabs/tsconfig.lib.json",
+            "project": "projects/router-tabs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/router-tabs/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/router-tabs/src/test.ts",
+            "tsConfig": "projects/router-tabs/tsconfig.spec.json",
+            "karmaConfig": "projects/router-tabs/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/router-tabs/tsconfig.lib.json",
+              "projects/router-tabs/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "router-tabs-app"
